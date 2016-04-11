@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
-  get "/", to: "login#show"
-  get "feed", to: "feed#show"
+  get "/", to: "sessions#new"
+  post "sessions/new", to: "sessions#create"
+  delete "sessions", to: "sessions#destroy"
+
+  get "feeds", to: "feeds#show"
+
+  get 'auth/twitter', :as => 'twitter_auth'
+  match 'auth/:provider/callback' => 'sessions#create', :via => [:get, :post]
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
