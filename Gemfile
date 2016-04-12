@@ -31,6 +31,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Unicorn as the app server
 # gem 'unicorn'
 
+#Use for Twitter Api
+ gem 'twitter'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

@@ -1,18 +1,23 @@
 class SessionsController < ApplicationController
 
- def create
-   require "pry"
-   binding.pry
- end
+  def create
+    oauth_hash = request.env["omniauth.auth"]
+    require "pry"
+    binding.pry
+    if !User.find_by_uid oauth_hash["uid"]
+      User.create uid: oauth_hash["uid"], name: oauth_hash["info"]["name"], provider: oauth_hash["provider"]
+    end
+  end
 
- def new
- end
+  def new
+  end
 
- def destory
+  def destroy
 
- end
+  end
 
- def auth_hash
-   request.env["omniauth.auth"]
- end
+  def auth_hash
+    request.env["omniauth.auth"]
+  end
 end
+
