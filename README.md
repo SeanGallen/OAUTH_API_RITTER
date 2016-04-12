@@ -1,14 +1,5 @@
 README
 ------
-Authentication via twitter and omniauth.
-
-Set up Sessions Controller.
-Set up User Model.
-
-Set feed controller and view.
-Create a feeder model that connects with twitter database.
-
-
-
-
-
+- [x] Authentication via twitter and omniauth.
+- [x] Set up Sessions Controller.
+- [x] Set up User Model.
