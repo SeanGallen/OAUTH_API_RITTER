@@ -1,12 +1,11 @@
 class SessionsController < ApplicationController
 
  def create
-
+   require "pry"
+   binding.pry
  end
 
  def new
-   require "pry"
-   binding.pry
  end
 
  def destory
